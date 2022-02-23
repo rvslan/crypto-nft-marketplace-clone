@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import { FiMenu } from 'react-icons/fi';
 import { CgSearch } from 'react-icons/cg';
@@ -89,16 +89,16 @@ const AuthItems = styled(MenuItem)`
 
 function Header({ mobileMenu }) {
   const [SearchOpen, setSearchOpen] = useState(false);
-  const { MobileMenuOpen, setMobileMenuOpen } = mobileMenu;
+  const { MobileMenuIsOpen, setMobileMenuIsOpen } = mobileMenu;
 
   const toggleMenu = () => {
-    setMobileMenuOpen(!MobileMenuOpen);
+    setMobileMenuIsOpen(!MobileMenuIsOpen);
   };
 
   return (
     <Wrapper>
       <MenuIcon>
-        {MobileMenuOpen ? (
+        {MobileMenuIsOpen ? (
           <IoClose
             style={{ fontSize: '2.5rem' }}
             color={Colors.Primary}
