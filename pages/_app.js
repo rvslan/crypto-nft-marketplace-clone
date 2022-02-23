@@ -90,13 +90,13 @@ const NavItem = styled.a`
 `;
 
 function MyApp({ Component, pageProps }) {
-  const [MobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
+  const [MobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <>
       <GlobalStyle />
       <Main>
-        <MobileMenu open={MobileMenuIsOpen}>
+        <MobileMenu open={MobileMenuOpen}>
           <ul>
             <li>
               <NavItem href='/'>Marketplace</NavItem>
@@ -119,7 +119,7 @@ function MyApp({ Component, pageProps }) {
             </li>
           </ul>
         </MobileMenu>
-        <Header mobileMenu={{ MobileMenuIsOpen, setMobileMenuIsOpen }} />
+        <Header mobileMenu={{ MobileMenuOpen, setMobileMenuOpen }} />
         <Component {...pageProps} />
       </Main>
     </>

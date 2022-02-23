@@ -8,10 +8,10 @@ import MobileSearchBar from './Header/MobileSearchBar';
 import { Colors, Devices } from '../lib/Theme';
 import Button from '../styled/Button';
 
-const HeaderEl = styled.header`
+const Wrapper = styled.article`
+  color: ${Colors.White};
   z-index: 10;
   display: flex;
-  color: ${Colors.White};
   width: 100%;
   align-items: center;
   height: 10%;
@@ -46,7 +46,7 @@ const Logo = styled.img`
   padding-right: 1rem;
 `;
 
-const Nav = styled.nav`
+const Menu = styled.nav`
   margin-left: auto;
   border-right: 1px solid ${Colors.Gray};
   padding-right: 1rem;
@@ -64,82 +64,75 @@ const Nav = styled.nav`
   }
 `;
 
-const NavItem = styled.a`
+const MenuItem = styled.a`
   font-size: 1rem;
   font-weight: 400;
 `;
-
 const SearchIcon = styled.span`
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
   @media ${Devices.Laptop} {
     display: none;
   }
 `;
 const MenuIcon = styled(SearchIcon)``;
-
-const AuthItems = styled(NavItem)`
+const AuthItems = styled(MenuItem)`
   font-size: 1rem;
   display: none;
+
   @media ${Devices.Laptop} {
     display: inherit;
   }
 `;
 
-export default function Header({ mobileMenu }) {
-  const { MobileMenuIsOpen, setMobileMenuIsOpen } = mobileMenu;
-  const [SearchIsOpen, setSearchIsOpen] = useState(false);
+function Header({ mobileMenu }) {
+  const [SearchOpen, setSearchOpen] = useState(false);
+  const { MobileMenuOpen, setMobileMenuOpen } = mobileMenu;
 
-  function toggleMenu() {
-    setMobileMenuIsOpen(!MobileMenuIsOpen);
-  }
+  const toggleMenu = () => {
+    setMobileMenuOpen(!MobileMenuOpen);
+  };
 
   return (
-    <HeaderEl>
+    <Wrapper>
       <MenuIcon>
-        {MobileMenuIsOpen ? (
+        {MobileMenuOpen ? (
           <IoClose
             style={{ fontSize: '2.5rem' }}
             color={Colors.Primary}
-            onClick={() => {
-              toggleMenu();
-            }}
+            onClick={() => toggleMenu()}
           />
         ) : (
-          <FiMenu
-            onClick={() => {
-              toggleMenu();
-            }}
-          />
+          <FiMenu onClick={() => toggleMenu()} />
         )}
       </MenuIcon>
       <Center>
         <Logo src='/images/cryptoLogo.png' />
         <LogoText href='#'>NFT</LogoText>
         <SearchBar />
-        <Nav>
+        <Menu>
           <ul>
             <li>
-              <NavItem href='#'>Marketplace</NavItem>
+              <MenuItem href='#'>Marketplace</MenuItem>
             </li>
             <li>
-              <NavItem href='#'>Drops</NavItem>
+              <MenuItem href='#'>Drops</MenuItem>
             </li>
             <li>
-              <NavItem href='#'>Brands</NavItem>
+              <MenuItem href='#'>Brands</MenuItem>
             </li>
             <li>
               <Button>Create</Button>
             </li>
           </ul>
-        </Nav>
+        </Menu>
       </Center>
-      {SearchIsOpen ? (
-        <SearchBarMob
-          SearchIsOpen={SearchIsOpen}
-          setSearchIsOpen={setSearchIsOpen}
+      {SearchOpen ? (
+        <MobileSearchBar
+          searchOpen={SearchOpen}
+          setSearchOpen={setSearchOpen}
         />
       ) : (
         ''
@@ -147,12 +140,10 @@ export default function Header({ mobileMenu }) {
       <AuthItems href='#'>Sign In</AuthItems>
       <AuthItems href='#'>Sign Up</AuthItems>
       <SearchIcon>
-        <CgSearch
-          onClick={() => {
-            setSearchIsOpen(!SearchIsOpen);
-          }}
-        />
+        <CgSearch onClick={() => setSearchOpen(!SearchOpen)} />
       </SearchIcon>
-    </HeaderEl>
+    </Wrapper>
   );
 }
+
+export default Header;
