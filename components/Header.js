@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import { FiMenu } from 'react-icons/fi';
 import { CgSearch } from 'react-icons/cg';
-import { IoClose } from 'react-icons/io';
+import { IoClose } from 'react-icons/io5';
 import SearchBar from './Header/SearchBar';
 import MobileSearchBar from './Header/MobileSearchBar';
 import { Colors, Devices } from '../lib/Theme';
