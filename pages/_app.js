@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Colors } from '../lib/Theme';
 import Header from '../components/Header';
 import Button from '../styled/Button';
+import Page from '../styled/Page';
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -96,31 +97,33 @@ function MyApp({ Component, pageProps }) {
     <>
       <GlobalStyle />
       <Main>
-        <MobileMenu open={MobileMenuIsOpen}>
-          <ul>
-            <li>
-              <NavItem href='/'>Marketplace</NavItem>
-            </li>
-            <li>
-              <NavItem href='/'>Drops</NavItem>
-            </li>
-            <li>
-              <NavItem href='/'>Brands</NavItem>
-            </li>
-            <li>
-              <Button>Create</Button>
-            </li>
-            <hr color={Colors.Primary} size='1'></hr>
-            <li>
-              <NavItem href='/'>Sign In</NavItem>
-            </li>
-            <li>
-              <NavItem href='/'>Sign Up</NavItem>
-            </li>
-          </ul>
-        </MobileMenu>
         <Header mobileMenu={{ MobileMenuIsOpen, setMobileMenuIsOpen }} />
-        <Component {...pageProps} />
+        <Page>
+          <MobileMenu open={MobileMenuIsOpen}>
+            <ul>
+              <li>
+                <NavItem href='/'>Marketplace</NavItem>
+              </li>
+              <li>
+                <NavItem href='/'>Drops</NavItem>
+              </li>
+              <li>
+                <NavItem href='/'>Brands</NavItem>
+              </li>
+              <li>
+                <Button>Create</Button>
+              </li>
+              <hr color={Colors.Primary} size='1'></hr>
+              <li>
+                <NavItem href='/'>Sign In</NavItem>
+              </li>
+              <li>
+                <NavItem href='/'>Sign Up</NavItem>
+              </li>
+            </ul>
+          </MobileMenu>
+          <Component {...pageProps} />
+        </Page>
       </Main>
     </>
   );
