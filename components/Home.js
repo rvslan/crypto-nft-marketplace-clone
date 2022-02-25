@@ -1,20 +1,12 @@
 import Head from 'next/head';
 import styled from 'styled-components';
 import { Colors, Devices } from '../lib/Theme';
+import Carousel from './Home/Carousel';
 import Hero from './Home/Hero';
+import NewsLetter from './Home/NewsLetter';
 
 const Wrapper = styled.article`
-  height: 100vh;
-  width: 100%;
   color: ${Colors.White};
-  display: flex;
-  justify-content: center;
-
-  padding: 0 2rem;
-
-  @media ${Devices.Laptop} {
-    padding: 0 1rem;
-  }
 `;
 
 export default function Home() {
@@ -26,6 +18,8 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Hero />
+      <NewsLetter />
+      <Carousel />
     </Wrapper>
   );
 }
