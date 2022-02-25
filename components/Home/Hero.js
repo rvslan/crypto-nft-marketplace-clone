@@ -9,7 +9,6 @@ import Button from '../../styled/Button';
 const Wrapper = styled.article`
   margin: 6rem 1rem 5rem 1rem;
   text-align: center;
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -181,7 +180,7 @@ function Hero() {
     <Wrapper>
       <Title>
         <Heading>Buy, sell, and showcase NFTs</Heading>
-        <SubTitle>from leading creators and brands</SubTitle>
+        <SubHeading>from leading creators and brands</SubHeading>
       </Title>
       <Slider>
         <InfoContainer>
@@ -190,7 +189,7 @@ function Hero() {
             <BsChevronLeft onClick={() => slideLeft()} />
             <div>
               <Date>{ActiveSlide.Date}</Date>
-              <Title>{ActiveSlide.Title}</Title>
+              <SubTitle>{ActiveSlide.Title}</SubTitle>
               <Link passHref href='#'>
                 <a>
                   <Author>{ActiveSlide.Author}</Author>
