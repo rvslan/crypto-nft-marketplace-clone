@@ -4,6 +4,7 @@ import { Colors } from '../lib/Theme';
 import Header from '../components/Header';
 import Button from '../styled/Button';
 import Page from '../styled/Page';
+import Footer from '../components/Footer';
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -124,6 +125,7 @@ function MyApp({ Component, pageProps }) {
           </MobileMenu>
           <Component {...pageProps} />
         </Page>
+        <Footer />
       </Main>
     </>
   );
