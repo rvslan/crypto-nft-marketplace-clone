@@ -6,6 +6,7 @@ import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
 import Link from 'next/link';
+import { MdOutlineVerified } from 'react-icons/md';
 
 const Wrapper = styled.article`
   display: flex;
@@ -24,6 +25,13 @@ const Wrapper = styled.article`
     padding: 1rem 10%;
   }
 `;
+
+const ButtonIcon = styled.div`
+  margin: 0px 8px 0px 0px;
+  font-size: 24px;
+  display: inline-flex;
+`;
+
 const Title = styled.h1`
   font-size: 2.5rem;
   font-weight: 500;
@@ -126,7 +134,12 @@ function Carousel() {
 
   return (
     <Wrapper>
-      <Button>Best Selling</Button>
+      <Button round>
+        <ButtonIcon>
+          <MdOutlineVerified />
+        </ButtonIcon>
+        Best Selling
+      </Button>
       <Title>Top Creators</Title>
       <Actions>
         <ActionButton

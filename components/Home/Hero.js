@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Colors, Devices } from '../../lib/Theme';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import Button from '../../styled/Button';
+import { BsCalendar2WeekFill } from 'react-icons/bs';
 
 const Wrapper = styled.article`
   margin: 6rem 1rem 5rem 1rem;
@@ -184,7 +185,10 @@ function Hero() {
       </Title>
       <Slider>
         <InfoContainer>
-          <Button round>{ActiveSlide.Badge}</Button>
+          <Button round>
+            {ActiveSlide.Badge === 'Upcoming' ? <BsCalendar2WeekFill /> : ''}
+            {ActiveSlide.Badge}
+          </Button>
           <Info>
             <BsChevronLeft onClick={() => slideLeft()} />
             <div>
