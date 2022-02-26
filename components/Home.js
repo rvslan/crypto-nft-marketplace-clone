@@ -4,6 +4,7 @@ import { Colors, Devices } from '../lib/Theme';
 import Carousel from './Home/Carousel';
 import Hero from './Home/Hero';
 import NewsLetter from './Home/NewsLetter';
+import TopCollectibles from './Home/TopCollectibles';
 
 const Wrapper = styled.article`
   color: ${Colors.White};
@@ -20,6 +21,7 @@ export default function Home() {
       <Hero />
       <NewsLetter />
       <Carousel />
+      <TopCollectibles />
     </Wrapper>
   );
 }
