@@ -154,7 +154,7 @@ function Hero() {
   const slideLeft = () => {
     const index = Index - 1;
 
-    if (index > 0) {
+    if (Index > 0) {
       setIndex(index);
       setActiveSlide(Slides[index]);
       return;
