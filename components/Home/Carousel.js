@@ -167,7 +167,7 @@ function Carousel() {
       </Actions>
       <ItemContainer ref={ItemContainerRef} onScroll={(e) => setScrollIndex(e)}>
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (
-          <Link key={i} href='#' passHref key={i}>
+          <Link key={i} href='/profile' passHref key={i}>
             <a>
               <Item>
                 <Avatar>

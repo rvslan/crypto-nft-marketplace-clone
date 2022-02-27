@@ -6,7 +6,6 @@ import { BsFillPatchCheckFill, BsInstagram } from 'react-icons/bs';
 import { GrTwitter } from 'react-icons/gr';
 import NFTCard from '../styled/NFTCard';
 import Grid from '../styled/Grid';
-import Head from 'next/head';
 import { NFTs } from '../lib/Info';
 import Tabs from '../styled/Tabs';
 import Tab from '../styled/Tab';
@@ -142,12 +141,9 @@ const AllTabs = [
   },
 ];
 
-function Profile({ username = 'newk3d' }) {
+function Profile({ username }) {
   return (
     <Wrapper>
-      <Head>
-        <title>Crypto.com NFT Marketplace - {username}</title>
-      </Head>
       <Cover>
         <Image src='/images/cover/newk3d.png' layout='fill' />
       </Cover>

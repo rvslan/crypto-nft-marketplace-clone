@@ -110,7 +110,7 @@ function Header({ mobileMenu }) {
       </MenuIcon>
       <Center>
         <Logo src='/images/cryptoLogo.png' />
-        <LogoText href='#'>NFT</LogoText>
+        <LogoText href='/'>NFT</LogoText>
         <SearchBar />
         <Menu>
           <ul>
